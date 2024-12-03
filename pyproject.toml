@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "yuni-python-utils-service"
+version = "0.1.0"
+description = "优妮机器人 python 相关工具网络服务"
+authors = ["sagiri <sagiri@yui.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django-ninja = "^1.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
