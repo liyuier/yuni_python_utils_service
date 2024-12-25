@@ -1,5 +1,15 @@
+from typing import Optional, Dict
+
 from pydantic import BaseModel
 
 
-class GetPluginListPicSchema(BaseModel):
-    pass
+class PluginInfo(BaseModel):
+    id: Optional[int] = None
+    name: str
+    ordered: bool
+
+
+class GetPluginsPicInfoSchema(BaseModel):
+    plugins_info: Dict[int, PluginInfo]
+
+
