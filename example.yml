@@ -1,0 +1,6 @@
+cos:
+  secret_id: secret_id
+  secret_key: secret_key
+  duration: 1800
+  bucket_name: bucket_name
+  bucket_region: bucket_region

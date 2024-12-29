@@ -14,7 +14,11 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+TEMPLATE_DIR = BASE_DIR / 'yuni_python_utils_service' / 'statistic' / 'template'
+CSS_DIR = BASE_DIR / 'yuni_python_utils_service' / 'statistic' / 'css'
+JS_DIR = BASE_DIR / 'yuni_python_utils_service' / 'statistic' / 'js'
+PIC_DIR = BASE_DIR / 'yuni_python_utils_service' / 'statistic' / 'pic'
+YML_CONFIG_DIR = BASE_DIR / 'config.yml'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -26,7 +30,6 @@ SECRET_KEY = "django-insecure-24)lxl2t)simabf+a^y$8$(8o4gu8ejt%vgyfcr$!1haga(ub3
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -69,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "yuni_python_utils_service.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
@@ -79,7 +81,6 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -99,7 +100,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -110,7 +110,6 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
