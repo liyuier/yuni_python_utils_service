@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plugin Information</title>
+    <!-- 引入第三方样式库 -->
+    <link rel="stylesheet" href="../css/layui.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <style>
+        /* 自定义样式 */
+        .container {
+            width: 350px; /* 内侧较宽的 div */
+            margin: 0 auto; /* 居中显示 */
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-right: none;
+            border-left: none;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+
+        /* 固定第一列宽度 */
+        td:first-child, th:first-child {
+            width: 20%; /* 足够显示三位数的 ID */
+            white-space: nowrap;
+        }
+
+        /* 固定第二列宽度 */
+        td:nth-child(2), th:nth-child(2) {
+            width: 50%; /* 只需容纳 10 个汉字 */
+            word-wrap: break-word;
+        }
+
+        /* 固定第三列宽度 */
+        td:nth-child(3), th:nth-child(3) {
+            width: 30%; /* 固定宽度 */
+            text-align: center;
+        }
+
+        /* 开关图标样式 */
+        .switch-icon {
+            display: inline-block;
+            width: 24px; /* Adjust size as necessary */
+            height: 24px;
+            border-radius: 50%;
+            line-height: 24px;
+            text-align: center;
+            font-size: 16px; /* Adjust based on the size of the check/cross */
+        }
+
+        .switch-icon.true {
+            background-color: #90EE90; /* 浅绿色 */
+        }
+
+        .switch-icon.false {
+            background-color: #FFB6C1; /* 浅红色 */
+        }
+
+        .switch-icon::before {
+            color: white;
+            font-family: "Font Awesome 5 Free", serif; /* Assuming you are using Font Awesome */
+            font-weight: 900;
+        }
+
+        .switch-icon.true::before {
+            content: "\f00c"; /* Unicode for a check mark */
+        }
+
+        .switch-icon.false::before {
+            content: "\f00d"; /* Unicode for a times (X) */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table class="layui-table" lay-skin="line" lay-even rules=rows> <!-- 使用第三方样式库的类名 -->
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名称</th>
+                    <th>是否订阅</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for plugin in plugins_info %}
+                <tr>
+                    <td>{{ plugin.id }}</td>
+                    <td>{{ plugin.name }}</td>
+                    <td>
+                        <span class="switch-icon
+                            {% if plugin.ordered %}
+                                true
+                            {% else %}
+                                false
+                            {% endif %}
+                        "></span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
