@@ -13,3 +13,7 @@ class GetPluginsPicInfoSchema(BaseModel):
     plugins_info: Dict[int, PluginInfo]
 
 
+class GetPluginDetailInfoSchema(BaseModel):
+    id: Optional[int] = None
+    name: str
+    help: str
