@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .apis.hello_api import api
+from .apis.logo import logo_api
 from .apis.plugin_api import plugin_api
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("apis/", api.urls),
-    path("plugin/", plugin_api.urls)
+    path("plugin/", plugin_api.urls),
+    path("logo/", logo_api.urls)
 ]
