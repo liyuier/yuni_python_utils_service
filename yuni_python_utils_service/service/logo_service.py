@@ -41,7 +41,7 @@ def screenshot_ba_logo(schema: BlueArchiveLogoSchema):
         await page.press("input#textR", 'Backspace')
         await page.type("input#textR", schema.textr)
         await page.locator("html").click()
-        time.sleep(0.5)
+        await asyncio.sleep(0.5)
         # 截取画面
         container_div = page.locator('canvas#canvas')
         screenshot_bytes = await container_div.screenshot(path=None)
