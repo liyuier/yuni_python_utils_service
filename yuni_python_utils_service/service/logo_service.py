@@ -30,8 +30,10 @@ def write_test_html(html: str):
 
 def screenshot_ba_logo(schema: BlueArchiveLogoSchema):
     async def shot(page: Page):
+        print("screenshot_ba_logo start...")
         # 访问本地部署的服务
-        await page.goto('http://localhost:5174/')
+        await page.goto('http://localhost:8010/')
+        print("page.goto('http://localhost:8010/') OK")
         await page.click("input#textL")
         await page.press("input#textL", 'Control+A')
         await page.press("input#textL", 'Backspace')
